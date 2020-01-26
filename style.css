@@ -1,0 +1,13 @@
+img.avatar {
+    width: 5em !important;
+    height: 5em !important;
+    margin-right: 2.25em !important;
+}
+
+.projects h4 {
+    margin-bottom: 1em !important;
+}
+
+.projects .accordions {
+    margin-bottom: 1em !important;
+}
