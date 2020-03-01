@@ -169,24 +169,24 @@
         const content = all_contents[i];
 
         // Click behavior
-        toggle.addEventListener("click", function (e) {
-          if (!is_toggle) {
-            // Hide all content areas first
-            for (let a = 0; a < all_contents.length; a++) {
-              _this.closeAccordion(all_toggles[a], all_contents[a]);
-            }
+        // toggle.addEventListener("click", function (e) {
+        //   if (!is_toggle) {
+        //     // Hide all content areas first
+        //     for (let a = 0; a < all_contents.length; a++) {
+        //       _this.closeAccordion(all_toggles[a], all_contents[a]);
+        //     }
 
-            // Expand the clicked item
-            _this.openAccordion(toggle, content);
-          } else {
-            // Toggle the clicked item
-            if (toggle.classList.contains("is-open")) {
-              _this.closeAccordion(toggle, content);
-            } else {
-              _this.openAccordion(toggle, content);
-            }
-          }
-        });
+        //     // Expand the clicked item
+        //     _this.openAccordion(toggle, content);
+        //   } else {
+        //     // Toggle the clicked item
+        //     if (toggle.classList.contains("is-open")) {
+        //       _this.closeAccordion(toggle, content);
+        //     } else {
+        //       _this.openAccordion(toggle, content);
+        //     }
+        //   }
+        // });
 
         // Expand the first item
         if (i === 0 && is_first_expanded) {
