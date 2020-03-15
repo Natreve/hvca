@@ -61,6 +61,114 @@ https://templatemo.com/tm-537-art-factory
             padding: 4px 0px;
             padding-bottom: 37px;
         }
+
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -91,7 +199,16 @@ https://templatemo.com/tm-537-art-factory
                             </li>
                             <li class="scroll-to-section"><a href="#about">About</a></li>
                             <li class="scroll-to-section"><a href="#about2">Executive</a></li>
-                            <li><a href="#events">Events</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Info</a>
+                                <ul>
+                                    <li><a href="membership.html">Meetings and Events</a></li>
+
+                                    <li><a href="#"
+                                            onclick=" alert('The HVCA Blog is under construction. If you would like to volunteer your content writing skills, feel free to contact us.');">Blog</a>
+                                    </li>
+                                </ul>
+                            </li>
 
                             <li class="scroll-to-section">
                                 <a href="#services">Amenities</a>
@@ -133,7 +250,8 @@ https://templatemo.com/tm-537-art-factory
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <h1><strong>Harbour View</strong> Citizens' Association</h1>
                         <p>Your contribution makes a world of difference...</p>
-                        <a href="https://forms.gle/SVyrmBFCCVgRjUdT8" target="_blank" class="main-button-slider">Become a member</a>
+                        <a href="https://forms.gle/SVyrmBFCCVgRjUdT8" target="_blank" class="main-button-slider">Become
+                            a member</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"
                         data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
@@ -287,192 +405,225 @@ https://templatemo.com/tm-537-art-factory
                         </p>
                     </div>
                     <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
+                    <html>
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 9999; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  
-}
+                    <head>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <style>
+                            body {
+                                font-family: Arial, Helvetica, sans-serif;
+                            }
 
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
-  
-}
+                            /* The Modal (background) */
+                            .modal {
+                                display: none;
+                                /* Hidden by default */
+                                position: fixed;
+                                /* Stay in place */
+                                z-index: 9999;
+                                /* Sit on top */
+                                padding-top: 100px;
+                                /* Location of the box */
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                /* Full width */
+                                height: 100%;
+                                /* Full height */
+                                overflow: auto;
+                                /* Enable scroll if needed */
+                                background-color: rgb(0, 0, 0);
+                                /* Fallback color */
+                                background-color: rgba(0, 0, 0, 0.4);
+                                /* Black w/ opacity */
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
+                            }
 
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
+                            /* Modal Content */
+                            .modal-content {
+                                position: relative;
+                                background-color: #fefefe;
+                                margin: auto;
+                                padding: 0;
+                                border: 1px solid #888;
+                                width: 80%;
+                                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                                -webkit-animation-name: animatetop;
+                                -webkit-animation-duration: 0.4s;
+                                animation-name: animatetop;
+                                animation-duration: 0.4s
+                            }
 
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+                            /* Add Animation */
+                            @-webkit-keyframes animatetop {
+                                from {
+                                    top: -300px;
+                                    opacity: 0
+                                }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
+                                to {
+                                    top: 0;
+                                    opacity: 1
+                                }
+                            }
 
-.modal-header {
-  padding: 2px 16px;
-  background-color: #0088E8;
-  color: white;
-}
+                            @keyframes animatetop {
+                                from {
+                                    top: -300px;
+                                    opacity: 0
+                                }
 
-.modal-body {padding: 2px 16px;}
+                                to {
+                                    top: 0;
+                                    opacity: 1
+                                }
+                            }
 
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #0088E8;
-  color: white;
-}
-.column {
-  float: left;
-  width: 50%;
-  padding-left: 30px
-}
-.contact-form {
-                        padding: 0px;
-                        padding-bottom: 0;
-                        padding-top: 0;
-                        }
-</style>
-</head>
-<body>
+                            /* The Close Button */
+                            .close {
+                                color: white;
+                                float: right;
+                                font-size: 28px;
+                                font-weight: bold;
+                            }
 
-<!-- Trigger/Open The Modal -->
-<button id="myBtn" class="main-button">List of Streets in Harbour View</button>
+                            .close:hover,
+                            .close:focus {
+                                color: #000;
+                                text-decoration: none;
+                                cursor: pointer;
+                            }
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+                            .modal-header {
+                                padding: 2px 16px;
+                                background-color: #0088E8;
+                                color: white;
+                            }
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2></h2>
-    </div>
-    <div class="row">
-        <div class="column"><p></p>
-            <p>Harbour Drive</p>
-            <p>Coral Way</p>
-            <p>Neptune Ave</p>
-            <p>Marine Terrace</p>
-            <p>Windy Way</p>
-            <p>Tuna Ave</p>
-            <p>Cove Ave</p>
-            <p>Martello Drive</p>
-            <p>Fort Nugent Drive</p>
-            <p>Dorado Drive</p>
-            <p>Atoll Ave</p>
-            <p>Driftwood Drive</p>
-            <p>Nautilus Ave</p>
-            <p>Reef Ave</p>
-            <p>Riverside Drive</p>
-            <p>Dolphin Square</p>
-            <p>Aqua Ave</p>
-            <p>Sea Shore Place</p></div>
-        <div class="column">
-                <p></p>
-            <p>Fort Nugent Drive</p>
-            <p>Reel Ave</p>
-            <p>Dorado Drive</p>
-            <p>Lagoon Ave</p>
-            <p>Aqua Ave</p>
-            <p>Pearl Ave</p>
-            <p>Starfish Drive</p>
-            <p>Orion Ave</p>
-            <p>Saturn Ave</p>
-            <p>Jupiter Ave</p>
-            <p>Zenith Ave</p>
-            <p>Venus Ave</p>
-            <p>Sirus Ave</p>
-            <p>Lunar Ave</p>
-            <p>Southern Cross Drive</p>
-            <p>Mars Drive</p>
-            <p>Nimbus Ave</p>
-            <p>Coply Drive</p>
-            <p>Caribbean Terrace</p>
-        </div>
-        
-      </div>
-    <div class="modal-body">
-      
-     
-    </div>
-    
-  </div>
+                            .modal-body {
+                                padding: 2px 16px;
+                            }
 
-</div>
+                            .modal-footer {
+                                padding: 2px 16px;
+                                background-color: #0088E8;
+                                color: white;
+                            }
 
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
+                            .column {
+                                float: left;
+                                width: 50%;
+                                padding-left: 30px
+                            }
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+                            .contact-form {
+                                padding: 0px;
+                                padding-bottom: 0;
+                                padding-top: 0;
+                            }
+                        </style>
+                    </head>
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+                    <body>
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn" class="main-button">List of Streets in Harbour View</button>
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="close">&times;</span>
+                                    <h2></h2>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <p></p>
+                                        <p>Harbour Drive</p>
+                                        <p>Coral Way</p>
+                                        <p>Neptune Ave</p>
+                                        <p>Marine Terrace</p>
+                                        <p>Windy Way</p>
+                                        <p>Tuna Ave</p>
+                                        <p>Cove Ave</p>
+                                        <p>Martello Drive</p>
+                                        <p>Fort Nugent Drive</p>
+                                        <p>Dorado Drive</p>
+                                        <p>Atoll Ave</p>
+                                        <p>Driftwood Drive</p>
+                                        <p>Nautilus Ave</p>
+                                        <p>Reef Ave</p>
+                                        <p>Riverside Drive</p>
+                                        <p>Dolphin Square</p>
+                                        <p>Aqua Ave</p>
+                                        <p>Sea Shore Place</p>
+                                    </div>
+                                    <div class="column">
+                                        <p></p>
+                                        <p>Fort Nugent Dr</p>
+                                        <p>Reel Ave</p>
+                                        <p>Dorado Drive</p>
+                                        <p>Lagoon Ave</p>
+                                        <p>Aqua Ave</p>
+                                        <p>Pearl Ave</p>
+                                        <p>Starfish Drive</p>
+                                        <p>Orion Ave</p>
+                                        <p>Saturn Ave</p>
+                                        <p>Jupiter Ave</p>
+                                        <p>Zenith Ave</p>
+                                        <p>Venus Ave</p>
+                                        <p>Sirus Ave</p>
+                                        <p>Lunar Ave</p>
+                                        <p>Southern Cross Dr</p>
+                                        <p>Mars Drive</p>
+                                        <p>Nimbus Ave</p>
+                                        <p>Coply Drive</p>
+                                        <p>Caribbean Terrace</p>
+                                    </div>
 
-</body>
-</html>
+                                </div>
+                                <div class="modal-body">
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <script>
+                            // Get the modal
+                            var modal = document.getElementById("myModal");
+
+                            // Get the button that opens the modal
+                            var btn = document.getElementById("myBtn");
+
+                            // Get the <span> element that closes the modal
+                            var span = document.getElementsByClassName("close")[0];
+
+                            // When the user clicks the button, open the modal 
+                            btn.onclick = function () {
+                                modal.style.display = "block";
+                            }
+
+                            // When the user clicks on <span> (x), close the modal
+                            span.onclick = function () {
+                                modal.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function (event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                            }
+                        </script>
+
+                    </body>
+
+                    </html>
 
                 </li>
             </div>
@@ -495,14 +646,25 @@ window.onclick = function(event) {
                             Students can enjoy a quiet environment to achieve optimal
                             productivity at the community library.
                         </p>
-                        <a href="#" class="main-button">Photos</a>
+                        <a href="#" id="showlibraryimage" class="main-button">Photos</a>
+
+
+                        <img id="libraryimage" src="/assets/images/library1.jpg" alt="Snow"
+                            style="width:100%;max-width:300px;display:none;">
+
+                        <!-- The Modal -->
+                        <div id="myModal2" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
                             <i class="fas fa-child"></i>
                             <!-- <i><img src="assets/images/service-icon-02.png" alt=""></i> -->
                         </div>
-                        <h5 class="service-title">Harbour View Basic School</h5>
+                        <h5 class="service-title">Basic Schools in Harbour View</h5>
                         <p>
                             As a family oriented community, Harbour View takes pride in its early childhood education
                             with our basic schools.
@@ -607,17 +769,7 @@ window.onclick = function(event) {
                         </p>
                         <a href="#" class="main-button">Read More</a>
                     </div>
-                    <div class="item service-item">
-                        <div class="icon">
-                            <i class="fas fa-tree"></i>
-                        </div>
-                        <h5 class="service-title">Rocky Park</h5>
-                        <p>
-                            Sed a consequat velit. Morbi lectus sapien, vestibulum et sapien
-                            sit amet, ultrices malesuada odio. Donec non quam.
-                        </p>
-                        <a href="#" class="main-button">Read More</a>
-                    </div>
+
                     <div class="item service-item">
                         <div class="icon">
                             <i class="fas fa-first-aid"></i>
@@ -667,9 +819,12 @@ window.onclick = function(event) {
                             raising funds, while establishing relationships among community members.
                         </p>
                         <p>
-                            See our calendar for information on any upcoming fundraiser.
+
+                            <a rel="nofollow" href="/membership.html">See our Calendar</a> for information on any
+                            upcoming
+                            fundraiser.
                         </p>
-                        <!-- <span>Email: <a href="#">harbourviewcitizensassociation@gmail.com</a><br /></span> -->
+
                         <a href="#contact-us" class="main-button">Contact Us</a>
                     </div>
                 </div>
@@ -773,8 +928,8 @@ window.onclick = function(event) {
     <!-- ***** Contact Us Start ***** -->
     <section class="section" id="contact-us">
         <div class="container-fluid">
-                             
-                        <div class="row">
+
+            <div class="row">
                 <!-- ***** Contact Map Start ***** -->
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div id="map">
@@ -785,7 +940,7 @@ window.onclick = function(event) {
                            4. Copy only URL and paste it within the src="" field below
                     -->
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4363.792227685574!2d-76.71815496517388!3d17.95342853200929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edb4743f8594987%3A0xb4024f2572882555!2sHarbour%20View%20Police%20Station!5e0!3m2!1sen!2sjm!4v1580067461925!5m2!1sen!2sjm"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7591.181622401305!2d-76.71770257937624!3d17.951229335732204!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edb4743f8594987%3A0xb4024f2572882555!2sHarbour%20View%20Police%20Station!5e0!3m2!1sen!2sjm!4v1584236972066!5m2!1sen!2sjm"
                             width="100%" height="650px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -796,9 +951,10 @@ window.onclick = function(event) {
                     <div class="contact-form">
                         <form id="contact" action="" method="post">
                             <div class="row"></div>
-                                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenSQPmiLX9bHVu2hiw8DeKlLe6MTCjl5PKiI9YQ2OASNYbrQ/viewform?embedded=true" 
-                                    width="100%" height="650px" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                <!-- <div class="col-md-6 col-sm-12">
+                            <iframe
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSenSQPmiLX9bHVu2hiw8DeKlLe6MTCjl5PKiI9YQ2OASNYbrQ/viewform?embedded=true"
+                                width="100%" height="650px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <!-- <div class="col-md-6 col-sm-12">
                                     <fieldset>
                                         <input name="name" type="text" id="name" placeholder="Full Name" required=""
                                             class="contact-field" />
@@ -823,12 +979,12 @@ window.onclick = function(event) {
                                         </button>
                                     </fieldset>
                                 </div> -->
-                            </div>
-                        </form>
                     </div>
+                    </form>
                 </div>
-                <!-- ***** Contact Form End ***** -->
             </div>
+            <!-- ***** Contact Form End ***** -->
+        </div>
         </div>
     </section>
     <!-- ***** Contact Us End ***** -->
@@ -885,6 +1041,30 @@ window.onclick = function(event) {
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+    <!-- <script>
+        // Get the modal
+
+        var modal = document.getElementById("myModal2");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("libraryimage");
+        var button = document.getElementById("showlibraryimage");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        button.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (X), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script> -->
 </body>
 
 </html>
