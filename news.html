@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Template Mo" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    <title>Harbour View</title>
+    <!--
+
+ART FACTORY
+
+https://templatemo.com/tm-537-art-factory
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/templatemo-art-factory.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/image.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        #about2 ul li i {
+            float: left;
+            font-size: 40px;
+            text-align: center;
+            color: #0088E8;
+            padding-top: 17px;
+        }
+
+        #about2 ul li .text h6 {
+            padding-top: 12px;
+            font-size: 21px;
+            font-weight: 500;
+            color: #1e1e1e;
+            margin-bottom: 14px;
+        }
+
+        #about2 p:not(#p1) {
+            margin-bottom: 27px;
+            font-size: 16px;
+            line-height: 0px;
+            letter-spacing: 0.5px;
+        }
+
+        #about2 h5 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1e1e1e;
+            line-height: 40px;
+            margin-bottom: 9px;
+            margin-top: 48px;
+            letter-spacing: 0.5px;
+        }
+
+        #about2 {
+            padding: 4px 0px;
+            padding-bottom: 37px;
+        }
+
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            @include border-radius(5px);
+        }
+
+        td,
+        th {
+            border: 2px solid #dddddd;
+
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo">HVCA</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section">
+                                <a href="#welcome" class="active">Home</a>
+                            </li>
+                            <li class="scroll-to-section"><a href="/index.html#about">About</a></li>
+                            <li class="scroll-to-section"><a href="#/index.htmlabout2">Executive</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Info</a>
+                                <ul>
+                                    <li><a href="membership.html">Meetings & Events</a></li>
+
+                                    <li><a href="/news.html">News & Blog</a>
+                                    </li>
+                                    <li><a href="#"
+                                            onclick=" alert('The HVCA Rental Page is under construction. If you would like to feature a rental property , feel free to contact us.');">Rental
+                                            Property</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="scroll-to-section">
+                                <a href="/index.html#services">Amenities</a>
+                            </li>
+                            <li class="scroll-to-section">
+                                <a href="/index.html#frequently-question">Projects</a>
+                            </li>
+                            <!-- <li class="submenu">
+                                <a href="javascript:;">Drop Down</a>
+                                <ul>
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="">Features</a></li>
+                                    <li><a href="">FAQ's</a></li>
+                                    <li><a href="">Blog</a></li>
+                                </ul>
+                            </li> -->
+                            <li class="scroll-to-section">
+                                <a href="#contact-us">Contact Us</a>
+                            </li>
+                        </ul>
+                        <a class="menu-trigger">
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome" style="background-position-y: -96px;">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <h1><strong>Coronavirus (COVID-19)</strong><br /> and our community</h1>
+                <p>The HVCA urges all its members to stay abreast of current and factual information relating to
+                    the COVID-19 outbreak. <br />You can do so by visiting the Ministry of Health & Wellness'
+                    website as shown below. <br /> You are welcomed to <a href="/index.html#contact-us">contact</a> the
+                    HVCA if you are in need of any help during this difficult time. <br /> corresponce will be kept
+                    confidencial.</p> <a href="https://www.moh.gov.jm/" target="_blank"
+                    class="main-button-slider">moh.gov.jm</a>
+
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="assets/images/pngfuel.png" class="rounded img-fluid d-block mx-auto" alt="App" />
+                </div>
+                <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                    <div class="left-heading">
+                        <h5>Emergency Contacts</h5>
+                    </div>
+                    <div class="left-text">
+
+                        <h2></h2>
+
+                        <table>
+
+                            <tr>
+                                <th colspan="2">Coronavirus HOTLINE</th>
+
+                            </tr>
+                            <tr>
+                                <th colspan="2">888 663 5683 (ONE LOVE)</th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">888 754 7792</th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">876 542 5998</th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">876 542 6006</th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">876 542 6007</th>
+                            </tr>
+                            <tr>
+                                <th>Harbour View Police</th>
+                                <th>876 928 6001</th>
+                            </tr>
+                            <tr>
+                                <td>Fire/Ambulance</td>
+                                <td>110</td>
+                            </tr>
+                            <tr>
+                                <td>Police</td>
+                                <td>119</td>
+                            </tr>
+                            <tr>
+                                <td>Jamaica Public Service (JPS)</td>
+                                <td>1 888 225 5577</td>
+                            </tr>
+                            <tr>
+                                <td>National Water Commission (NWC) </td>
+                                <td>1 888 225 5692</td>
+                            </tr>
+                            <tr>
+                                <td>Office of Disaster Preparedness and Emergency Management (O.D.P.E.M.) </td>
+                                <td> 1-888-991-4262
+
+                                    odpem@cwjamaica.com
+
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <p class="copyright">
+                        Copyright &copy; 2020 Art Factory Company, Jamaican Developers
+                        Group . Design:
+                        <a rel="nofollow" href="https://templatemo.com">TemplateMo</a> .
+                        Developed:
+                        <a rel="nofollow" href="https://daniquehayden.com">Iconics Media</a>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li>
+                            <a target="_blank" href="https://fb.me/myhvca"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.instagram.com/myharbourview.ca/"><i
+                                    class="fa fa-instagram"></i></a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
