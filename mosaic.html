@@ -86,6 +86,127 @@ https://templatemo.com/tm-537-art-factory
                 width: 100%;
             }
         }
+
+
+        .mySlides {
+            display: none
+        }
+
+        .mySlides img {
+            height: 600px;
+            object-fit: cover;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .slide-prev,
+        .slide-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white !important;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .slide-next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .slide-prev:hover,
+        .slide-next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .slide-text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .slide-numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .slide-dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .slide-active,
+        .slide-dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .slide-fade {
+            -webkit-animation-name: slide-fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: slide-fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes slide-fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes slide-fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+
+            .slide-prev,
+            .slide-next,
+            .slide-text {
+                font-size: 11px
+            }
+        }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131322986-5"></script>
@@ -103,7 +224,6 @@ https://templatemo.com/tm-537-art-factory
 </head>
 
 <body>
-    <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -112,9 +232,7 @@ https://templatemo.com/tm-537-art-factory
         </div>
 
     </div>
-    <!-- ***** Preloader End ***** -->
 
-    <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -135,9 +253,9 @@ https://templatemo.com/tm-537-art-factory
                                 <ul>
                                     <li><a href="membership.html">Meetings & Events</a></li>
 
-                                    <li><a href="/news.html">News</a>
+                                    <li><a href="/news.html">News & Dues</a>
                                     </li>
-                                    <li><a href="/blog.html">Blog</a>
+                                    <li><a href="/mosaic.html">The Mosaic Project</a>
                                     </li>
                                     <li><a href="#"
                                             onclick=" alert('The HVCA Rental Page is under construction. If you would like to feature a rental property , feel free to contact us.');">Rental
@@ -174,79 +292,92 @@ https://templatemo.com/tm-537-art-factory
             </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Welcome Area Start ***** -->
-    <div class="welcome-area" id="welcome" style="background-position-y: -96px;">
-        <!-- ***** Header Text Start ***** -->
-        <div class="header-text">
-            <div class="container">
-                <h1><strong>Your Issues</strong><br /> are our issues</h1>
-                <p>The HVCA is looking to kickstart our blog to raise awareness about pressing issues in the community.
-                    We would love for you to join our team of content writers. <br> You are welcomed to <a
-                        href="/index.html#contact-us" style="color:#35489e; "><strong>contact</strong> </a> us or fill
-                    out our PR membership form below if you
-                    interested in making your
-                    valuable contribution to our PR Team.<br /> <br> <a href="https://forms.gle/ZmMrq22dJnhVMCEZ9"
-                        target="_blank" class="main-button-slider">Join our PR Team</a> <br />
-
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="left-heading">
+                    <h5>#MosaicDisaster</h5>
+                </div>
+                <div class="left-text">
+                    <p>
+                        The Mosaic project was implemented in 2015 to combat the problem of land slippage and
+                        drainage in the surrounding communities of Bay Shore and Melbrook Heights. The Office
+                        of Disaster Preparedness and Emergency Management (ODPEM) received the funding from
+                        the World Bank to carry the project. They contracted Kingston & St Andrew Municipal
+                        Corporation (KSAMC) to supervise the project and National Works Agency (NWA) to
+                        implement the same.
+                        <br><br>However, the resolution of their problems has resulted in life-threatening issues
+                        for residents of Harbour Drive and Southern Cross Drive in the community of Harbour
+                        View. Residents have been flooded out of their homes and are in fear of losing their
+                        entire homes as the soil beneath their homes has been eroded. Over 13 walls have
+                        collapsed.
+                        <br><br>The HVCA has had Multiple meetings with NWA, NEPA, ODPEM and KSAMC. The public
+                        defender has also facilitated mediation meetings with these entities. These meetings
+                        have proven futile at attaining a resolution.
+                        <br><br>The affected constituencies are Kingston East and Port Royal and St. Andrew East
+                        Rural as the walls which have collapsed range from Numbers 1 to 53 on Harbour Drive.
+                        The project details were presented by the Citizens' Association President
+                        at a meeting with both Members of Parliament for the area affected. The
+                        meeting was held on August 2, 2020 at 3pm with MPs Mrs. Juliet Holness and Mr. Phillip
+                        Paulwell and streamed via <a target="_blank"
+                            href="https://www.facebook.com/watch/?v=295248571807349">Facebook Live.</a>
+                        <br><br>This project has been a true disaster, resulting in the development of sinkholes
+                        beneath many of the homes. Harbour Drive residents continue to have damages to their
+                        properties and face trauma as they live in constant fear each time it rains.
+                    </p>
+                    <p>To keep up with the development of this story, follow us on
+                        <a target="_blank" href="https://facebook.com/myhvca"> Facebook,</a>
+                        <a target="_blank" href="https://twitter.com/myharbourview"> Twitter</a>
+                        and <a href="https://www.instagram.com/myharbourview.ca/" target="_blank"> Instagram</a>.
+                    </p>
+                </div>
             </div>
         </div>
-        <!-- ***** Header Text End ***** -->
-    </div>
-    <!-- ***** Welcome Area End ***** -->
-
-    <!-- 
-    <div class="tm-container-outer" id="tm-section-2">
-        <section class="tm-slideshow-section">
-            <div class="tm-slideshow">
-                <img src="assets/images/tm-img-01.jpg" alt="Image">
-                <img src="assets/images/tm-img-02.jpg" alt="Image">
-                <img src="assets/images/img/tm-img-03.jpg" alt="Image">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hr"></div>
             </div>
-            <div class="tm-slideshow-description tm-bg-primary">
-                <h2 class="">Europe's most visited places</h2>
-                <p>Aenean in lacus nec dolor fermentum congue. Maecenas ut velit pharetra, pharetra tortor sit
-                    amet, vulputate sem. Vestibulum mi nibh, faucibus ac eros id, sagittis tincidunt velit.
-                    Proin interdum ullamcorper faucibus. Ut mi nunc, sollicitudin non pulvinar id, sagittis eget
-                    diam.</p>
-                <a href="#" class="text-uppercase tm-btn tm-btn-white tm-btn-white-primary">Continue Reading</a>
-            </div>
-        </section>
-        <section class="clearfix tm-slideshow-section tm-slideshow-section-reverse">
+        </div>
+        <div class="slideshow-container">
 
-            <div class="tm-right tm-slideshow tm-slideshow-highlight">
-                <img src="assets/images/tm-img-02.jpg" alt="Image">
-                <img src="assets/images/tm-img-03.jpg" alt="Image">
-                <img src="assets/images/tm-img-01.jpg" alt="Image">
+            <div class="mySlides slide-fade">
+                <div class="slide-numbertext">1 / 4</div>
+                <img src="./assets/images/mosaic/channel.jpeg" style="width:100%">
+                <div class="slide-text">Caption Text</div>
             </div>
 
-            <div class="tm-slideshow-description tm-slideshow-description-left tm-bg-highlight">
-                <h2 class="">Asia's most popular places</h2>
-                <p>Vivamus in massa ullamcorper nunc auctor accumsan ac at arcu. Donec sagittis mattis pharetra.
-                    Proin commodo, ante et volutpat pulvinar, arcu arcu ullamcorper diam, id maximus sem tellus
-                    id sem. Suspendisse eget rhoncus diam. Fusce urna elit, porta nec ullamcorper id.</p>
-                <a href="#" class="text-uppercase tm-btn tm-btn-white tm-btn-white-highlight">Continue
-                    Reading</a>
+            <div class="mySlides slide-fade">
+                <div class="slide-numbertext">2 / 4</div>
+                <img src="./assets/images/mosaic/IMG-20200824-WA0002.jpg" style="width:100%">
+                <div class="slide-text">Caption Two</div>
             </div>
 
-        </section>
-        <section class="tm-slideshow-section">
-            <div class="tm-slideshow">
-                <img src="assets/images/tm-img-03.jpg" alt="Image">
-                <img src="assets/images/tm-img-02.jpg" alt="Image">
-                <img src="assets/images/tm-img-01.jpg" alt="Image">
+            <div class="mySlides slide-fade">
+                <div class="slide-numbertext">3 / 4</div>
+                <img src="./assets/images/mosaic/no53.jpg" style="width:100%">
+                <div class="slide-text">Caption Three</div>
             </div>
-            <div class="tm-slideshow-description tm-bg-primary">
-                <h2 class="">America's most famous places</h2>
-                <p>Donec nec laoreet diam, at vehicula ante. Orci varius natoque penatibus et magnis dis
-                    parturient montes, nascetur ridiculus mus. Suspendisse nec dapibus nunc, quis viverra metus.
-                    Morbi eget diam gravida, euismod magna vel, tempor urna.</p>
-                <a href="#" class="text-uppercase tm-btn tm-btn-white tm-btn-white-primary">Continue Reading</a>
+            <div class="mySlides slide-fade">
+                <div class="slide-numbertext">4 / 4</div>
+                <img src="./assets/images/mosaic/wall19.jpg" style="width:100%">
+                <div class="slide-text">Caption Three</div>
             </div>
-        </section> -->
 
-    <!-- ***** Footer Start ***** -->
+            <a class="slide-prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="slide-next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="slide-dot" onclick="currentSlide(1)"></span>
+            <span class="slide-dot" onclick="currentSlide(2)"></span>
+            <span class="slide-dot" onclick="currentSlide(3)"></span>
+            <span class="slide-dot" onclick="currentSlide(4)"></span>
+        </div>
+
+    </section>
     <footer>
         <div class="container">
             <div class="row">
@@ -310,6 +441,38 @@ https://templatemo.com/tm-537-art-factory
     </script>
     <!--===============================================================================================-->
     <script src="assets/js/main.js"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("slide-dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" slide-active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " slide-active";
+        }
+    </script>
 
 </body>
 
