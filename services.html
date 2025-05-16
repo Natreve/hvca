@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Provider Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            /* Light background */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            color: #1a202c;
+            /* Dark heading */
+            margin-bottom: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .table-wrapper {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .service-provider-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .service-provider-table thead tr {
+            background-color: #edf2f7;
+            /* Light header background */
+        }
+
+        .service-provider-table th,
+        .service-provider-table td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+            /* Light border */
+        }
+
+        .service-provider-table th {
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .service-provider-table td {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .provider-name {
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+
+        .provider-details {
+            font-size: 12px;
+            color: #a0aec0;
+        }
+
+        .provider-address {
+            color: #718096;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        .provider-email {
+            color: #3182ce;
+            font-size: 12px;
+        }
+
+        .select-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .select-wrapper select {
+            appearance: none;
+            padding: 8px 24px 8px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #718096;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100px;
+        }
+
+        .select-wrapper select:focus {
+            outline: none;
+            border-color: #3182ce;
+            box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+        }
+
+        .select-wrapper::after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #718096;
+            pointer-events: none;
+        }
+
+        .payment-status {
+            font-weight: 600;
+            border-radius: 12px;
+            padding: 4px 10px;
+            display: inline-block;
+            font-size: 12px;
+        }
+
+        .payment-status.not-billed {
+            background-color: #fee2e2;
+            color: #ef4444;
+        }
+
+        .payment-status.payment-done {
+            background-color: #f0fdf4;
+            color: #15803d;
+        }
+
+        .payment-date {
+            color: #a0aec0;
+            font-size: 12px;
+        }
+
+        .selected-row {
+            background-color: #ebf4ff;
+            /* Light blue for selected row */
+        }
+
+        .selected-row td {
+            border-bottom-color: #3182ce;
+        }
+
+        .selected-row .provider-name {
+            color: #1a202c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-title"></h1>
+        <div class="table-wrapper">
+            <table class="service-provider-table">
+                <thead>
+                    <tr>
+                        <th>SERVICE PROVIDER</th>
+                        <th>ADDRESS/CONTACT</th>
+                        <th>SERVICE</th>
+                        <th>Additional Info</th>
+                    </tr>
+                </thead>
+                <tbody class="providers">
+                    <!-- <tr>
+                        <td>
+                            <p class="provider-name">Service Provider Name</p>
+                            <p class="provider-details">Created by Administrator 1 11/06/2018 1, 16:35 PM</p>
+                        </td>
+                        <td>
+                            <p class="provider-address">Address 1, Address 2, City Name, State Name, Country Name,
+                                +916465465756 / 56546438</p>
+                            <p class="provider-email">emailid@emailid.com</p>
+                        </td>
+                        <td>
+                            <div class="select-wrapper">
+                                <select>
+                                    <option>Lock</option>
+                                    <option>Unlock</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="payment-status not-billed">Not Billed</p>
+                            <p class="payment-date">Last bill on 21 Jan 2018</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="provider-name">Service Provider Name</p>
+                            <p class="provider-details">Created by Administrator 1 11/06/2018 1, 16:35 PM</p>
+                        </td>
+                        <td>
+                            <p class="provider-address">Address 1, Address 2, City Name, State Name, Country Name,
+                                +916465465756 / 56546438</p>
+                            <p class="provider-email">emailid@emailid.com</p>
+                        </td>
+                        <td>
+                            <div class="select-wrapper">
+                                <select>
+                                    <option>Unlock</option>
+                                    <option>Lock</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="payment-status payment-done">Payment Done</p>
+                            <p class="payment-date">Last bill on 11 Jan 2018</p>
+                        </td>
+                    </tr>
+                    <tr class="selected-row">
+                        <td>
+                            <p class="provider-name">Service Provider Name</p>
+                            <p class="provider-details">Created by Administrator 1 11/06/2018 1, 16:35 PM</p>
+                        </td>
+                        <td>
+                            <p class="provider-address">Address 1, Address 2, City Name, State Name, Country Name,
+                                +916465465756 / 56546438</p>
+                            <p class="provider-email">emailid@emailid.com</p>
+                        </td>
+                        <td>
+                            <div class="select-wrapper">
+                                <select>
+                                    <option>Lock</option>
+                                    <option>Unlock</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="payment-status not-billed">Not Billed</p>
+                            <p class="payment-date">Last bill on 21 Jan 2018</p>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const list = [
+            {
+                "name": "LORNA’S TREATS/LORNA SLATER",
+                "service_provided": "BAKER- Vegan cakes & pastries, Floral & gift baskets",
+                "contact_info": [
+                    "876-882-4458",
+                    "876-541-9920"
+                ]
+            },
+            {
+                "name": "DONOVAN GOBERN",
+                "service_provided": "BARBER",
+                "contact_info": [
+                    "876-417-1531"
+                ]
+            },
+            {
+                "name": "CHUCKY/HARBOUR BAY PLAZA",
+                "service_provided": "BARBER",
+                "contact_info": [
+                    "876-409-4609"
+                ]
+            },
+            {
+                "name": "OLIVIA DAWSON",
+                "service_provided": "MOBILE BEAUTY THERAPIST- nails & body massage",
+                "contact_info": [
+                    "876-319-2425"
+                ]
+            },
+            {
+                "name": "DIAMOND",
+                "service_provided": "BODY WORK/DUCO",
+                "contact_info": [
+                    "876-820-7564"
+                ]
+            },
+            {
+                "name": "JERMAINE DOUGLAS",
+                "address": "(he comes to you)",
+                "service_provided": "CAR SERVICE/MAINTENANCE",
+                "contact_info": [
+                    "876-291-9010"
+                ]
+            },
+            {
+                "name": "SUKIE",
+                "service_provided": "CARPENTER",
+                "contact_info": [
+                    "876-424-6908"
+                ]
+            },
+            {
+                "name": "RENFORD GRAHAM",
+                "service_provided": "CARPENTER",
+                "contact_info": [
+                    "876-859-1102",
+                    "876-341-1466"
+                ]
+            },
+            {
+                "name": "WAYNE MCGOWAN (DQHS)",
+                "service_provided": "CARPENTER",
+                "contact_info": [
+                    "876-417-0159"
+                ]
+            },
+            {
+                "name": "MR. MAC",
+                "service_provided": "CARPENTER",
+                "contact_info": [
+                    "876-472-7736"
+                ]
+            },
+            {
+                "name": "JASON",
+                "service_provided": "CARPENTER",
+                "contact_info": [
+                    "876-354-6046"
+                ]
+            },
+            {
+                "name": "DAINO DEO",
+                "service_provided": "CELL PHONE REPAIR",
+                "contact_info": [
+                    "876-350-4812"
+                ]
+            },
+            {
+                "name": "HAYDEN CRUMBIE",
+                "service_provided": "CELL PHONE REPAIR",
+                "contact_info": [
+                    "876-588-5889"
+                ]
+            },
+            {
+                "name": "HAYDEN CRUMBIE",
+                "service_provided": "COMPUTER REPAIR",
+                "contact_info": [
+                    "876-588-5889"
+                ]
+            },
+            {
+                "name": "GARVIN GREEN",
+                "service_provided": "COMPUTER REPAIRS",
+                "contact_info": [
+                    "876-437-5025",
+                    "876-328-9423"
+                ]
+            },
+            {
+                "name": "VP GAS IGL cylinder",
+                "service_provided": "COOKING GAS",
+                "contact_info": [
+                    "876-462-9321"
+                ]
+            },
+            {
+                "name": "VESPAK COOKING GAS",
+                "service_provided": "COOKING GAS",
+                "contact_info": [
+                    "876-7938573"
+                ]
+            },
+            {
+                "service_provided": "COOKING GAS",
+                "contact_info": [
+                    "876-445-2583"
+                ]
+            },
+            {
+                "name": "TUNA GAS",
+                "service_provided": "COOKING GAS",
+                "contact_info": [
+                    "876-796-6296"
+                ]
+            },
+            {
+                "name": "SNIPNSHIP",
+                "service_provided": "COURIER SERVICES",
+                "contact_info": [
+                    "876-897-4168"
+                ]
+            },
+            {
+                "name": "ASAP",
+                "address": "9 SEASHORE PLACE",
+                "service_provided": "COURIER SERVICES",
+                "contact_info": [
+                    "876-676-6053"
+                ]
+            },
+            {
+                "name": "KNUTSFORD",
+                "address": "SHOP 38",
+                "service_provided": "COURIER SERVICES",
+                "contact_info": [
+                    "876-971-1822"
+                ]
+            },
+            {
+                "name": "AUDREY DAVIS",
+                "address": "RIVERSIDE DR.",
+                "service_provided": "DAYCARE",
+                "contact_info": [
+                    "876-478-9330"
+                ]
+            },
+            {
+                "name": "CARLA COGLE",
+                "address": "BRILLIANT MINDS DAYCARE",
+                "service_provided": "DAYCARE",
+                "contact_info": [
+                    "876-847-5770"
+                ]
+            },
+            {
+                "name": "BLESSINGS BLESS",
+                "address": "20 SIRIUS AVENUE",
+                "service_provided": "DAYCARE & PRE SCHOOL",
+                "contact_info": [
+                    "876-345-2923"
+                ]
+            },
+            {
+                "name": "MS CHARMAINE",
+                "service_provided": "DAY’S WORKER",
+                "contact_info": [
+                    "876-562-2572"
+                ]
+            },
+            {
+                "name": "DEANNE",
+                "service_provided": "DELI",
+                "contact_info": [
+                    "876-783-1368"
+                ]
+            },
+            {
+                "name": "HARBOUR VIEW DENTAL SPA",
+                "service_provided": "DENTIST",
+                "contact_info": [
+                    "876-335-6533"
+                ]
+            },
+            {
+                "name": "STEPHANIE",
+                "service_provided": "DRESSMAKER",
+                "contact_info": [
+                    "876-3974705"
+                ]
+            },
+            {
+                "name": "SOPHIE",
+                "service_provided": "DRESSMAKER",
+                "contact_info": [
+                    "876-874-9298"
+                ]
+            },
+            {
+                "name": "MORENE CLARKE",
+                "service_provided": "DRESSMAKER",
+                "contact_info": [
+                    "876-818-3165"
+                ]
+            },
+            {
+                "name": "OMARO CAMPBELL",
+                "service_provided": "DRIVING INSTRUCTOR",
+                "contact_info": [
+                    "876-419-7630"
+                ]
+            },
+            {
+                "name": "CAMPBELL’S DEFENSIVE DRIVING",
+                "service_provided": "DRIVING INSTRUCTOR",
+                "contact_info": [
+                    "876-796-3935"
+                ]
+            },
+            {
+                "name": "BARRY BAKER",
+                "service_provided": "DRIVING INSTRUCTOR",
+                "contact_info": [
+                    "876-870-9534"
+                ]
+            },
+            {
+                "name": "MR. BELL",
+                "service_provided": "DRIVING INSTRUCTOR",
+                "contact_info": [
+                    "876-787-7953"
+                ]
+            },
+            {
+                "name": "CHRIS PECK",
+                "service_provided": "ELECTRICIAN",
+                "contact_info": [
+                    "876-278-7290"
+                ]
+            },
+            {
+                "name": "KEEDI GUYAH",
+                "service_provided": "ELECTRICIAN",
+                "contact_info": [
+                    "876-339-5380"
+                ]
+            },
+            {
+                "name": "RUSHANE",
+                "service_provided": "ELECTRICIAN (FANS)",
+                "contact_info": [
+                    "876-799-7838"
+                ]
+            },
+            {
+                "name": "WAYNE MARTIN",
+                "service_provided": "ELECTRICIAN",
+                "contact_info": [
+                    "876-558-6108"
+                ]
+            },
+            {
+                "name": "VAUGHN DIXON",
+                "service_provided": "ELECTRICIAN",
+                "contact_info": [
+                    "876-893-9724"
+                ]
+            },
+            {
+                "name": "KIEFAH",
+                "service_provided": "ELECTRICIAN",
+                "contact_info": [
+                    "876-551-7561"
+                ]
+            },
+            {
+                "name": "CHRISTOPHER",
+                "service_provided": "ELECTRICIAN (CERTIFIED)",
+                "contact_info": [
+                    "876-278-7291"
+                ]
+            },
+            {
+                "name": "FERGIE",
+                "service_provided": "ELECTRICIAN",
+                "contact_info": [
+                    "876-459-7820"
+                ]
+            },
+            {
+                "name": "MICHAEL O’NEIL",
+                "service_provided": "ELECTRICIAN",
+                "contact_info": [
+                    "876-852-0117",
+                    "876-363-2410"
+                ]
+            },
+            {
+                "name": "LORNA HARRIS",
+                "service_provided": "FOOD CATERING",
+                "contact_info": [
+                    "876-3742085"
+                ]
+            },
+            {
+                "name": "EASTSIDE",
+                "service_provided": "FOOD DELIVERY",
+                "contact_info": [
+                    "876-815-9203"
+                ]
+            },
+            {
+                "name": "EASTRUSH",
+                "service_provided": "FOOD DELIVERY",
+                "contact_info": [
+                    "876-454-5184"
+                ]
+            },
+            {
+                "name": "DANNY’S MARINA",
+                "service_provided": "FOOD ESTABLISHMENT",
+                "contact_info": [
+                    "876-350-6504"
+                ]
+            },
+            {
+                "service_provided": "FIRE BRIGADE",
+                "contact_info": [
+                    "876-922-2121"
+                ]
+            },
+            {
+                "name": "HECTOR",
+                "service_provided": "FURNITURE SPRAYING",
+                "contact_info": [
+                    "876-356-2113"
+                ]
+            },
+            {
+                "name": "DARLINGS FLOWER HUT, MRS. DAWSON",
+                "service_provided": "GARDEN/PLANT SUPPLIER",
+                "contact_info": [
+                    "876-306-8672",
+                    "876-541-0433"
+                ]
+            },
+            {
+                "name": "MARK",
+                "service_provided": "GARDENER",
+                "contact_info": [
+                    "876-445-8004"
+                ]
+            },
+            {
+                "name": "ROCKY",
+                "service_provided": "GARDENER",
+                "contact_info": [
+                    "876-890-4654"
+                ]
+            },
+            {
+                "name": "KEVIN",
+                "service_provided": "GARDENER",
+                "contact_info": [
+                    "876-573-4665"
+                ]
+            },
+            {
+                "name": "CARLTON SMITH",
+                "service_provided": "GARDENER",
+                "contact_info": [
+                    "876-575-9237",
+                    "876-415-0103"
+                ]
+            },
+            {
+                "name": "MR. POWELL",
+                "service_provided": "GARDENER",
+                "contact_info": [
+                    "876-598-8790"
+                ]
+            },
+            {
+                "name": "Mr. SCOTT",
+                "service_provided": "GARDENER/ LANDSCAPER",
+                "contact_info": [
+                    "876-874-6364"
+                ]
+            },
+            {
+                "name": "WINSTON",
+                "service_provided": "GENERAL REPAIRS- GAS STOVE",
+                "contact_info": [
+                    "876-401-5150"
+                ]
+            },
+            {
+                "name": "WINSTON",
+                "service_provided": "GENERAL REPAIR – GAS STOVE & FRIDGE",
+                "contact_info": [
+                    "876-891-0912",
+                    "876-333-4872"
+                ]
+            },
+            {
+                "name": "PATRICK",
+                "service_provided": "GENERAL REPAIR -FRIDGE",
+                "contact_info": [
+                    "876-360-0527"
+                ]
+            },
+            {
+                "name": "ONEIL ROBINSON",
+                "service_provided": "GENERAL REPAIR – WATER TANK",
+                "contact_info": [
+                    "876-793-2985"
+                ]
+            },
+            {
+                "name": "WAYNE",
+                "service_provided": "GENERAL REPAIR – WASHING MACHINE/ STOVE",
+                "contact_info": [
+                    "876-397-6550"
+                ]
+            },
+            {
+                "name": "SQUIRE",
+                "service_provided": "GENERAL REPAIR – TV",
+                "contact_info": [
+                    "876-776-4524",
+                    "876-436-86664"
+                ]
+            },
+            {
+                "name": "NIGEL",
+                "service_provided": "GENERAL REPAIR – TV",
+                "contact_info": [
+                    "876-369-1513"
+                ]
+            },
+            {
+                "name": "PETER EVANS",
+                "service_provided": "GRAPHICS & PRINT SERVICES",
+                "contact_info": [
+                    "876-310-7923"
+                ]
+            },
+            {
+                "name": "COMPOUND HARDWARE",
+                "service_provided": "HARDWARE SUPPLIERS",
+                "contact_info": [
+                    "876-237=3173"
+                ]
+            },
+            {
+                "name": "NEW WORLD",
+                "address": "ST. THOMAS MAIN ROAD/SEARCHER",
+                "service_provided": "HARDWARE SUPPLIES",
+                "contact_info": [
+                    "876-439-8213",
+                    "876-422-4494"
+                ]
+            },
+            {
+                "name": "SHEREEN",
+                "service_provided": "HAIRDRESSER",
+                "contact_info": [
+                    "876-539-3892",
+                    "876-853-0190"
+                ]
+            },
+            {
+                "name": "1 JUPITER ROAD-KIDDIES CORNER",
+                "service_provided": "HAIRDRESSER: Cornrows, braids & twists",
+                "contact_info": [
+                    "876-487-1326"
+                ]
+            },
+            {
+                "name": "KEISHA",
+                "service_provided": "HAIRDRESSER",
+                "contact_info": [
+                    "876-3540798"
+                ]
+            },
+            {
+                "name": "ROSE",
+                "service_provided": "HAIRDRESSER",
+                "contact_info": [
+                    "876-328-4934",
+                    "876-308-9780"
+                ]
+            },
+            {
+                "name": "MEIKA",
+                "address": "46 MARTELLO DRIVE, VIRTUOUS SHINE SALON",
+                "service_provided": "HAIRDRESSER: Braids, natural hair",
+                "contact_info": [
+                    "876-296-9196"
+                ]
+            },
+            {
+                "name": "HV HEALTH CENTRE",
+                "service_provided": "HEALTH CARE",
+                "contact_info": [
+                    "876-938-6513"
+                ]
+            },
+            {
+                "name": "HUGH GRANT",
+                "service_provided": "JUSTICE OF THE PEACE",
+                "contact_info": [
+                    "876-475-2088"
+                ]
+            },
+            {
+                "name": "LORNA HARRIS",
+                "service_provided": "JUSTICE OF THE PEACE (JP)",
+                "contact_info": [
+                    "876-374-2085"
+                ]
+            },
+            {
+                "name": "DIONNE MASON",
+                "service_provided": "JUSTICE OF THE PEACE",
+                "contact_info": [
+                    "876-564-9319"
+                ]
+            },
+            {
+                "name": "BERYL URQUHART",
+                "service_provided": "JUSTICE OF THE PEACE",
+                "contact_info": [
+                    "876-588-8783"
+                ]
+            },
+            {
+                "name": "GARTH DANIELS",
+                "service_provided": "JUSTICE OF THE PEACE",
+                "contact_info": [
+                    "876-377-5270"
+                ]
+            },
+            {
+                "name": "MICHAEL DESLANDES",
+                "service_provided": "JUSTICE OF THE PEACE",
+                "contact_info": [
+                    "876-356-4974"
+                ]
+            },
+            {
+                "name": "ALTHEA BLISSETT",
+                "service_provided": "JUSTICE OF THE PEACE",
+                "contact_info": [
+                    "876-817-9098"
+                ]
+            },
+            {
+                "name": "MR. GRANT",
+                "service_provided": "LOCKSMITH",
+                "contact_info": [
+                    "876-874-6913"
+                ]
+            },
+            {
+                "name": "LAGA",
+                "service_provided": "LOCKSMITH",
+                "contact_info": [
+                    "876-371-6745"
+                ]
+            },
+            {
+                "name": "ERROL",
+                "service_provided": "MATTRESS MAKER",
+                "contact_info": [
+                    "876-343-0322"
+                ]
+            },
+            {
+                "name": "CRAIG MURRAY",
+                "service_provided": "MECHANIC- CAR",
+                "contact_info": [
+                    "876-430-8999"
+                ]
+            },
+            {
+                "name": "CHARMAINE HENTON",
+                "service_provided": "MUSIC SCHOOL & LESSONS",
+                "contact_info": [
+                    "876-877-8629"
+                ]
+            },
+            {
+                "name": "DANZIE NAILS",
+                "service_provided": "NAIL TECH",
+                "contact_info": [
+                    "876-894-3342"
+                ]
+            },
+            {
+                "name": "RUSHANE ROBINSON",
+                "service_provided": "ODD JOBS",
+                "contact_info": [
+                    "876-429-4349"
+                ]
+            },
+            {
+                "name": "JONES",
+                "service_provided": "OVEN SPECIALIST",
+                "contact_info": [
+                    "876-275-3461"
+                ]
+            },
+            {
+                "name": "CAPPA",
+                "service_provided": "PAINTER",
+                "contact_info": [
+                    "876-450-3674"
+                ]
+            },
+            {
+                "name": "ELVIS",
+                "service_provided": "PAINTER",
+                "contact_info": [
+                    "876-4953230"
+                ]
+            },
+            {
+                "name": "JERMAINE DOUGLAS",
+                "service_provided": "PAINTER",
+                "contact_info": [
+                    "876-291-9010"
+                ]
+            },
+            {
+                "name": "KUTTING EDGE PRINTING",
+                "address": "(ACROSS FROM TASTEE)",
+                "service_provided": "PASSPORT PICS/ PHOTOCOPYING ETC",
+                "contact_info": [
+                    "876-378-2378"
+                ]
+            },
+            {
+                "name": "DERRICK COUSINS",
+                "service_provided": "PASSPORT PICS",
+                "contact_info": [
+                    "876-336-8364"
+                ]
+            },
+            {
+                "name": "MICHAEL MYERS",
+                "service_provided": "PEST CONTROL",
+                "contact_info": [
+                    "876-360-2192",
+                    "876-822-0145"
+                ]
+            },
+            {
+                "name": "GARTH RILEY",
+                "service_provided": "PEST CONTROL",
+                "contact_info": [
+                    "876-369-8123",
+                    "876-349-8975"
+                ]
+            },
+            {
+                "name": "MR DALEY",
+                "service_provided": "PEST CONTROL",
+                "contact_info": [
+                    "876-375-3578"
+                ]
+            },
+            {
+                "name": "WAYNE FOLKES",
+                "service_provided": "PLUMBER",
+                "contact_info": [
+                    "876-350-1375"
+                ]
+            },
+            {
+                "name": "JEFF",
+                "service_provided": "PLUMBER",
+                "contact_info": [
+                    "876-387-4934"
+                ]
+            },
+            {
+                "name": "KIEFFER",
+                "service_provided": "PLUMBER",
+                "contact_info": [
+                    "876-567-7579"
+                ]
+            },
+            {
+                "name": "KENNETH MATTIS",
+                "service_provided": "PLUMBER",
+                "contact_info": [
+                    "876-377-1144",
+                    "876-510-7898"
+                ]
+            },
+            {
+                "name": "TONY",
+                "service_provided": "PLUMBER",
+                "contact_info": [
+                    "876-808-6881"
+                ]
+            },
+            {
+                "name": "KENEIL- KPS PLUMBING",
+                "service_provided": "PLUMBING: Repair & install water heater",
+                "contact_info": [
+                    "876-481-9459",
+                    "876-344-2753"
+                ]
+            },
+            {
+                "name": "HV POLICE STATION",
+                "address": "14 SARGASSO AVENUE",
+                "service_provided": "POLICE",
+                "contact_info": [
+                    "876-928-6001",
+                    "876-928-6012"
+                ]
+            },
+            {
+                "name": "INSPECTOR EDMUND",
+                "service_provided": "POLICE",
+                "contact_info": [
+                    "876-226-2158"
+                ]
+            },
+            {
+                "name": "SGT. NEEDHAM",
+                "service_provided": "POLICE",
+                "contact_info": [
+                    "876-372-1861"
+                ]
+            },
+            {
+                "name": "PAUL HENTON",
+                "service_provided": "RECORDING STUDIO",
+                "contact_info": [
+                    "876-377-8299"
+                ]
+            },
+            {
+                "name": "PRUDENCE HALL",
+                "service_provided": "REAL ESTATE",
+                "contact_info": [
+                    "876-482-5172"
+                ]
+            },
+            {
+                "name": "BOBBY CROSS",
+                "service_provided": "RENTAL- CAR",
+                "contact_info": [
+                    "876-382-4544"
+                ]
+            },
+            {
+                "name": "TRANSPORTATION SERVICES, MARLON CROSSDALE",
+                "service_provided": "RENTAL- CAR",
+                "contact_info": [
+                    "876-275-0208",
+                    "876-525-5357"
+                ]
+            },
+            {
+                "name": "EVERTON",
+                "service_provided": "RENTAL-BOARD (form/props)",
+                "contact_info": [
+                    "876-310-7645"
+                ]
+            },
+            {
+                "name": "FLOYD ROBB",
+                "service_provided": "ROOFING",
+                "contact_info": [
+                    "876-373-5825/ 876-999-6510"
+                ]
+            },
+            {
+                "name": "CONROY MILLER- ESSENTIAL ELECTRO CITY CO LTD",
+                "service_provided": "SECURITY CAMERAS",
+                "contact_info": [
+                    "876-437-8539",
+                    "876-627-7992",
+                    "876-627-7993"
+                ]
+            },
+            {
+                "name": "RAYON STANLEY",
+                "service_provided": "SOLAR & ELECTRICAL SERVICES",
+                "contact_info": [
+                    "876-464-7532"
+                ]
+            },
+            {
+                "name": "PATRICK",
+                "service_provided": "TAILOR",
+                "contact_info": [
+                    "876-774-0042"
+                ]
+            },
+            {
+                "name": "WILLIAM",
+                "service_provided": "TAILOR",
+                "contact_info": [
+                    "876-778-7139"
+                ]
+            },
+            {
+                "name": "GEORGE JOHNSON",
+                "service_provided": "TAILOR",
+                "contact_info": [
+                    "876-883-2943",
+                    "876-517-1763"
+                ]
+            },
+            {
+                "name": "CHRIS – ON TIME COMPANY",
+                "service_provided": "TAXI",
+                "contact_info": [
+                    "876-369-2882"
+                ]
+            },
+            {
+                "name": "CHRISTOPHER PALMER",
+                "service_provided": "TAXI",
+                "contact_info": [
+                    "876-861-1458"
+                ]
+            },
+            {
+                "name": "TONY",
+                "service_provided": "TAXI",
+                "contact_info": [
+                    "876-384-2302"
+                ]
+            },
+            {
+                "name": "MR. GRANT",
+                "service_provided": "TAXI",
+                "contact_info": [
+                    "876-837-6637"
+                ]
+            },
+            {
+                "name": "ORVILLE LLOYD",
+                "service_provided": "TECHNICIAN SOLAR PANELS/ AIR CONDITIONER ETC",
+                "contact_info": [
+                    "876-220-0028"
+                ]
+            },
+            {
+                "name": "DAWSON",
+                "service_provided": "TECHNICIAN -AIR CONDITIONER",
+                "contact_info": [
+                    "876-423-6927"
+                ]
+            },
+            {
+                "name": "MR. HIGGINS",
+                "service_provided": "TECHNICIAN- AIR CONDITIONING",
+                "contact_info": [
+                    "876-561-8920"
+                ]
+            },
+            {
+                "name": "MAESTRO JOHNSON",
+                "service_provided": "TECHNICIAN-install ac, security cameras, repair appliances, electrical installation",
+                "contact_info": [
+                    "876-548-3641",
+                    "876-533-1585"
+                ]
+            },
+            {
+                "name": "MR MATTIS",
+                "service_provided": "TILER",
+                "contact_info": [
+                    "876-377-1144"
+                ]
+            },
+            {
+                "name": "EVADNEY (JINGLES)",
+                "service_provided": "TRANSPORTATION- BUS DRIVER",
+                "contact_info": [
+                    "876-851-7734"
+                ]
+            },
+            {
+                "name": "SMS TRANSPORT & TOURS",
+                "service_provided": "TRANSPORTATION- PRIVATE SCHOOL BUS",
+                "contact_info": [
+                    "876-344-0548",
+                    "876-367-8757"
+                ]
+            },
+            {
+                "name": "EVA",
+                "service_provided": "TRANSPORTATION- BUS DRIVER (kids)",
+                "contact_info": [
+                    "876-366-4048"
+                ]
+            },
+            {
+                "name": "MR GARY WALKER",
+                "service_provided": "TRANSPORTATION & AIRPORT PICK UP",
+                "contact_info": [
+                    "876-782-9502"
+                ]
+            },
+            {
+                "name": "D2D TRANSPORT COMP.",
+                "service_provided": "TRANSPORTATION/ WHEELCHAIR – PASSENGERS",
+                "contact_info": [
+                    "876-285-0293",
+                    "876-504-9153"
+                ]
+            },
+            {
+                "name": "SHERYL JARRETT (MEMOIRS)",
+                "service_provided": "TRAVEL & VACATION",
+                "contact_info": [
+                    "Mtvs.travel@gmail.com",
+                    "876-564-2659"
+                ]
+            },
+            {
+                "name": "CARLTON",
+                "service_provided": "TRUCKING/ MOVING",
+                "contact_info": [
+                    "876-866-3544"
+                ]
+            },
+            {
+                "name": "NOT AVAILABLE",
+                "service_provided": "TUTOR – CXC",
+                "contact_info": [
+                    "876-408-8602"
+                ],
+                "notes": "Subjects: MATHS, PHYSICS, CHEMISTRY, BIOLOGY, IT"
+            },
+            {
+                "name": "LINDEN NEIL",
+                "service_provided": "TUTOR- BIOLOGY, CHEMISTRY",
+                "contact_info": [
+                    "876-938-6793",
+                    "876-259-5410"
+                ]
+            },
+            {
+                "name": "CAROL HARRIS",
+                "service_provided": "MATH TUTOR (High school students Grades 7-11) Also Grades 4-6",
+                "contact_info": [
+                    "876-815-8363"
+                ]
+            },
+            {
+                "name": "KEVIN",
+                "service_provided": "UPHOLSTERER",
+                "contact_info": [
+                    "876-852-3928"
+                ]
+            },
+            {
+                "name": "AUBREY",
+                "service_provided": "UPHOLSTERER",
+                "contact_info": [
+                    "876-938-9000",
+                    "876-938-7630"
+                ]
+            },
+            {
+                "name": "MIKO THOMPSON",
+                "service_provided": "UPHOLSTERER",
+                "contact_info": [
+                    "876-404-6654"
+                ]
+            },
+            {
+                "name": "ERIC ARMSTRONG",
+                "service_provided": "UPHOLSTERER",
+                "contact_info": [
+                    "876-376-6770"
+                ]
+            },
+            {
+                "name": "DENO SOUTH",
+                "service_provided": "VET TECH",
+                "contact_info": [
+                    "876-441-9614"
+                ]
+            },
+            {
+                "name": "OZZY",
+                "service_provided": "VET",
+                "contact_info": [
+                    "876-466-4507",
+                    "876-293-5573"
+                ]
+            },
+            {
+                "name": "ISLAND MOBILE VETS, ABIGAIL PINN",
+                "notes": "(makes house calls)",
+                "service_provided": "VET",
+                "contact_info": [
+                    "876-301-8374"
+                ]
+            },
+            {
+                "name": "JAMEL",
+                "service_provided": "WATER TRUCK",
+                "contact_info": [
+                    "876-543-5159"
+                ]
+            },
+            {
+                "name": "RSW DRINKING WATER",
+                "service_provided": "WATER – DRINKING",
+                "contact_info": [
+                    "876-348-6488",
+                    "876-397-7717"
+                ]
+            },
+            {
+                "name": "CLIVE ROBINSON",
+                "service_provided": "WELDER",
+                "contact_info": [
+                    "876-440-5291"
+                ]
+            }
+        ]
+
+        const providers = document.querySelector(".providers")
+        document.querySelector(".page-title").innerHTML = `Total ${list.length} Service Providers`
+        list.forEach(item => {
+            const tr = document.createElement("tr")
+            const td = document.createElement("td")
+            const template = `
+            <tr>
+                <td>
+                    <p class="provider-name">${item.name}</p>
+                    <p class="provider-details">Created 15/05/2025 1, 6:00 PM</p>
+                </td>
+                <td>
+                    <p class="provider-address">${item?.address ? item.address : ""}</p>
+                    <p class="provider-address">${item.contact_info.toString().split(",").join(", ")}</p>
+                </td>
+                <td>
+                    <p>${item.service_provided}</p>
+                </td>
+                <td>
+                    <p>${item.notes ? item.notes : ""}</p>
+                </td>
+               
+            </tr>
+            `
+            providers.insertAdjacentHTML("afterbegin", template)
+        })
+
+
+
+    </script>
+</body>
+
+</html>
